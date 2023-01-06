@@ -1,0 +1,155 @@
+/* All the elements in page, will be allowed to include the padding and border in an element's total width and height */
+*{
+    box-sizing: border-box;
+}
+
+/* The ID of the div, which the information of the developer and his/her repos is going to be shown, is main
+    and will gain the 70% of the parent element's width */
+#main{
+    width: 70%;
+}
+
+/* This block will specify the size of the form, which includes the search bar and the submit button */
+.user-form{
+    max-width: 700px;
+    width: 100%;
+    margin-right: 5px;
+    padding: 15px;
+}
+
+/* This block is for styling the body of our page. We define the backround color. 
+    Moreover, we want all elements in body to be in the center of the page so horizontally,
+    align-items and justify-content and vertically, height will do it. */
+body{
+    background-color: #8d8da0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* form-div, is the div which wrapps our form. we let it to occupy 30% of the body
+    and color and radius are set to give it some beauty :) */
+.form-div{
+    width: 30%;
+    background-color: #4c2885;
+    margin-right: 5px;
+    border-radius: 10px;
+}
+
+/* This block is styling the submit button. The position is set to relative so 
+    The top and bottom properties specify the vertical offset from its normal position
+    and the left and right properties specify the horizontal offset. */
+.button{
+    width: 50%;
+    position: relative;
+    background-color: #17121f;
+    border-radius: 5px;
+    color: #fff;
+    padding: 2px;
+    font-family: inherit;
+    font-size: 1rem;
+    margin: 10%;
+}
+
+/* Specifing the size and shape of the image of the developer */
+.avatar{
+    border-radius: 50%;
+    border: 10px solid #2a2a72;
+    height: 150px;
+    width: 150px;
+}
+
+/* Here we style the input part or the search bar. By setting the display flex,
+    child elements automatically align like columns or rows with auto width and auto height.
+    Other styles have been explained above. */
+.user-form input {
+    width: 100%;
+    margin-right: 8px;
+    display: flex;
+    background-color: #17121f;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    padding: 1rem;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+/* This block is for the text of placeholder of our seachbar */
+.user-form input::placeholder{
+    color: #bbb;
+}
+
+/* Both search box and the user-info box have card class so this block will be applied
+    to both of them */
+.card {
+    max-width: 800px;
+    background-color: #4c2885;
+    border-radius: 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(0,0,0,0.1);
+    display: flex;
+    padding: 3rem;
+    margin: 0 1.5rem;
+}
+
+/* user-info is the div, which includes information of the user including name, bio and activities.
+ */
+.user-info {
+    color: #eee;
+    margin-left: 2rem;
+}
+
+/* User name */
+.user-info h2{
+    margin-top: 0;
+}
+
+/* The selected repositories of the developer which are going to be represented.
+    display inline-block, will make them all be located in a line */
+.repo{
+    text-decoration: none;
+    color: #fff;
+    background-color: #212a72;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* The three blocks below, will style the follower, following and public repos element */
+.user-info ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    max-width: 400px;
+}
+
+.user-info ul li{
+    display: flex;
+    align-items: center;
+}
+
+.user-info ul li strong{
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+}
+
+/* As the width of the page reduces, the search box and the user info will be messed up.
+   So for the pages which the size of them are less than 750px, we change the style to 
+    solve the issue.  */
+@media (max-width: 750px){
+    .card{
+        flex-direction: column;
+        align-items: center;
+    }
+    .user-form{
+        max-width: 400px;
+    }
+}
